@@ -6,13 +6,13 @@ public class LoggingService
 {
     //create private value of interface
     private ILoggingService _loggingService;
-    
+
     //create constructor and use interface to assign value to private variable
     public LoggingService(ILoggingService loggingService)
     {
         _loggingService = loggingService;
     }
-        public void Log(string message)
+    public void Log(string message)
     {
         _loggingService.Log(message);
     }
@@ -25,7 +25,7 @@ public interface ILoggingService
     public void Log(string message);
 }
 
-public class FileLoggingService: ILoggingService
+public class FileLoggingService : ILoggingService
 {
     // Method to log to file
     public void Log(string message)
@@ -34,7 +34,7 @@ public class FileLoggingService: ILoggingService
     }
 }
 
-public class EventLogService: ILoggingService
+public class EventLogService : ILoggingService
 {
     // Method to log to EventLog
     public void Log(string message)
@@ -43,7 +43,7 @@ public class EventLogService: ILoggingService
     }
 }
 
-public class DatabaseLoggingService: ILoggingService
+public class DatabaseLoggingService : ILoggingService
 {
 
     // Method to log to file
